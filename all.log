@@ -1,0 +1,96 @@
+2016-05-11 22:57:10.272 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 1 mit Strecke 2--------------------------------
+2016-05-11 22:57:10.273 [main] DEBUG pra1.Pra1 - CCW von Strecke 1 mit Punkt 1 von Strecke 2: 0
+2016-05-11 22:57:10.273 [main] DEBUG pra1.Pra1 - CCW von Strecke 1 mit Punkt 2 von Strecke 2: 0
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 1: 0
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 1: 0
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - Sonderfall: beide Strecken auf einer Gerade
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 2 mit Strecke 3--------------------------------
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 3: 1
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 3: 0
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 1 von Strecke 2: -1
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 2 von Strecke 2: -1
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 2 mit Strecke 4--------------------------------
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 4: -1
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 4: 0
+2016-05-11 22:57:10.274 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 1 von Strecke 2: 1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 2 von Strecke 2: 1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 2 mit Strecke 5--------------------------------
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 5: 1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 5: -1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 1 von Strecke 2: 1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 2 von Strecke 2: 1
+2016-05-11 22:57:10.275 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.277 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 2 mit Strecke 6--------------------------------
+2016-05-11 22:57:10.277 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 6: 1
+2016-05-11 22:57:10.277 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 6: -1
+2016-05-11 22:57:10.277 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 1 von Strecke 2: -1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 2 von Strecke 2: -1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 2 mit Strecke 7--------------------------------
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 1 von Strecke 7: -1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - CCW von Strecke 2 mit Punkt 2 von Strecke 7: -1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 1 von Strecke 2: 1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 2 von Strecke 2: 1
+2016-05-11 22:57:10.278 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 3 mit Strecke 4--------------------------------
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 1 von Strecke 4: 1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 2 von Strecke 4: 1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 1 von Strecke 3: -1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 2 von Strecke 3: 1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 3 mit Strecke 5--------------------------------
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 1 von Strecke 5: -1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 2 von Strecke 5: -1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 1 von Strecke 3: 1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 2 von Strecke 3: 1
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 3 mit Strecke 6--------------------------------
+2016-05-11 22:57:10.279 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 1 von Strecke 6: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 2 von Strecke 6: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 1 von Strecke 3: -1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 2 von Strecke 3: -1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 3 mit Strecke 7--------------------------------
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 1 von Strecke 7: 0
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 3 mit Punkt 2 von Strecke 7: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 1 von Strecke 3: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 2 von Strecke 3: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 4 mit Strecke 5--------------------------------
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 1 von Strecke 5: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 2 von Strecke 5: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 1 von Strecke 4: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 2 von Strecke 4: 1
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 4 mit Strecke 6--------------------------------
+2016-05-11 22:57:10.280 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 1 von Strecke 6: -1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 2 von Strecke 6: -1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 1 von Strecke 4: 0
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 2 von Strecke 4: -1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 4 mit Strecke 7--------------------------------
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 1 von Strecke 7: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 4 mit Punkt 2 von Strecke 7: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 1 von Strecke 4: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 2 von Strecke 4: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 5 mit Strecke 6--------------------------------
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 1 von Strecke 6: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 2 von Strecke 6: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 1 von Strecke 5: -1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 2 von Strecke 5: -1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 5 mit Strecke 7--------------------------------
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 1 von Strecke 7: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 5 mit Punkt 2 von Strecke 7: 1
+2016-05-11 22:57:10.281 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 1 von Strecke 5: 1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 2 von Strecke 5: 1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - ---------------Vergleich Strecke 6 mit Strecke 7--------------------------------
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 1 von Strecke 7: -1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - CCW von Strecke 6 mit Punkt 2 von Strecke 7: -1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 1 von Strecke 6: 1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - CCW von Strecke 7 mit Punkt 2 von Strecke 6: 1
+2016-05-11 22:57:10.282 [main] DEBUG pra1.Pra1 - !!!!!!!!!!!! KEIN SCHNITT !!!!!!!!!!!!!!
