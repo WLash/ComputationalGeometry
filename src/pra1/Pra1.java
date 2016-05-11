@@ -14,8 +14,6 @@ public class Pra1 {
 
 	public static void start() throws Exception {
 
-
-
 		long startTime = System.currentTimeMillis();
 		Vector<Line2D> data = readData();
 		System.out.println("Start . Size: " + data.size());
@@ -112,7 +110,7 @@ public class Pra1 {
 
 	private static Vector<Line2D> readData() throws Exception{
 		Vector<Line2D> data = new Vector<>();
-		try (BufferedReader br = new BufferedReader(new FileReader("src/pra1/coords/data_nocut.dat"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("src/pra1/coords/data_10cuts.dat"))) {
 		    String line;
 		    while ((line = br.readLine()) != null) {
 		       	String [] val = line.split(" ");
