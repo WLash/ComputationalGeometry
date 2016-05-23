@@ -26,7 +26,7 @@ public class Pra1 {
 				log.debug("---------------Vergleich Strecke " + (i+1) + " mit Strecke " + (j+1) + "--------------------------------");
 				Line2D line1 = data.get(i);
 				Line2D line2 = data.get(j);
-				//wenn alle ccw == 0 sind, liegen alle Punkte auf einem imaginären Strahl. Prüfe ob für Line 2 einer der beiden X werte innerhalb des DeltaX von Linie 1 Liegen
+				//wenn alle ccw == 0 sind, liegen alle Punkte auf einem imaginï¿½ren Strahl. Prï¿½fe ob fï¿½r Line 2 einer der beiden X werte innerhalb des DeltaX von Linie 1 Liegen
 
 				int line1First =  ccw(line1, line2.getP2());
 				int line1Second = ccw(line1, line2.getP1());
