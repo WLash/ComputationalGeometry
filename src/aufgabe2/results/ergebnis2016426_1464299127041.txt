@@ -1,0 +1,33 @@
+Thüringen:
+    Fläche: 0.0
+Schleswig-Holstein:
+    Fläche: 0.0
+Sachsen-Anhalt:
+    Fläche: 0.0
+Sachsen:
+    Fläche: 0.0
+Saarland:
+    Fläche: 0.0
+Rheinland-Pfalz:
+    Fläche: 0.0
+Nordrhein-Westfalen:
+    Fläche: 0.0
+Niedersachsen:
+    Fläche: 0.0
+Mecklenburg-Vorpommern:
+    Fläche: 0.0
+Hessen:
+    Fläche: 0.0
+Hamburg:
+    Fläche: 0.0
+Bremen:
+    Fläche: 0.0
+Brandenburg:
+    Fläche: 0.0
+Berlin:
+    Fläche: 0.0
+Bayern:
+    Fläche: 0.0
+Baden__x26__Württemberg:
+    Fläche: 0.0
+München -> Bayern
