@@ -1,0 +1,1 @@
+In diesem Ordner wird die Ergebnisausgabe der Aufgabe 2 in Form einer Textdatei abgelegt.
