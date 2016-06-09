@@ -38,7 +38,7 @@ public class CustomLine2D extends Line2D.Double {
         this.yIntersect = yIntersect;
     }
 
-    public double calculateY(double xIntersect){
+    public double getActualY(double xIntersect){
         return gradient * xIntersect + yIntersect;
     }
 
@@ -63,7 +63,7 @@ public class CustomLine2D extends Line2D.Double {
      * @param line
      * @return
      */
-    public Point2D.Double intersectLines(Line2D line)throws IllegalArgumentException
+    public Point2D.Double intersectLines(CustomLine2D line)throws IllegalArgumentException
     {
         // Wegen der Lesbarkeit
         double x1 = this.getX1();
