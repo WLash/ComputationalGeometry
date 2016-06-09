@@ -6,8 +6,6 @@
 package aufgabe1;
 
 import java.awt.geom.Line2D;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.Vector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +16,7 @@ public class Aufgabe1 {
 
     public static void start() throws Exception {
         long startTime = System.currentTimeMillis();
-        Vector<Line2D> data = readData();
+        Vector<Line2D.Double> data = ComGeoUtil.readLines("src/aufgabe1/coords/data_10cuts.dat");
         System.out.println("Start . Size: " + data.size());
         int crossCount = 0;
         int comparison = 0;
@@ -69,22 +67,4 @@ public class Aufgabe1 {
         System.out.println("Dauer: " + time + " ms");
     }
 
-    private static Vector<Line2D> readData() throws Exception {
-        Vector vector = new Vector();
-
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("src/aufgabe1/coords/data_10cuts.dat"));
-            String line;
-            while((line = br.readLine()) != null) {
-                String[] val = line.split(" ");
-
-                Line2D strecke = new Line2D.Double(Double.valueOf(val[0]), Double.valueOf(val[1]), Double.valueOf(val[2]), Double.valueOf(val[3]));
-                vector.add(strecke);
-            }
-
-            return vector;
-        } catch (Exception var16) {
-            throw var16;
-        }
-    }
 }
