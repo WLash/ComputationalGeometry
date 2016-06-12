@@ -24,4 +24,18 @@ public class Event{
         this.point = point;
     }
 
+
+    @Override
+    public String toString() {
+        String eventType;
+        if(this instanceof  LineEvent){
+            eventType = "LineEvent";
+        } else {
+            eventType = "IntersectEvent";
+        }
+        return "Event{" +
+                 eventType +
+                ", point=" + point +
+                '}';
+    }
 }

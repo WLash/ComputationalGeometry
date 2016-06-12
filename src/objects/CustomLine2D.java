@@ -1,14 +1,18 @@
 package objects;
 
+import aufgabe3.Aufgabe3;
+import org.apache.logging.log4j.Logger;
 import util.ComGeoUtil;
 
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.util.logging.LogManager;
 
 /**
  * Created by wlasc on 08.06.2016.
  */
 public class CustomLine2D extends Line2D.Double {
+
 
     int id;
     double gradient;
@@ -60,20 +64,21 @@ public class CustomLine2D extends Line2D.Double {
 
     /**
      * Berechnet Schnittpunkt der Strecken. Gibt null zurück wenn kein Schnittpunkt besteht.
-     * @param line
+     * @param m
      * @return
      */
-    public Point2D.Double intersectLines(CustomLine2D line)throws IllegalArgumentException
-    {
+    public Point2D.Double intersectLines(Line2D m)throws IllegalArgumentException {
+        Line2D l = new Line2D.Double(this.getP1(), this.getP2());
+
         // Wegen der Lesbarkeit
-        double x1 = this.getX1();
-        double x2 = this.getX2();
-        double x3 = line.getX1();
-        double x4 = line.getX2();
-        double y1 = this.getY1();
-        double y2 = this.getY2();
-        double y3 = line.getY1();
-        double y4 = line.getY2();
+        double x1 = l.getX1();
+        double x2 = l.getX2();
+        double x3 = m.getX1();
+        double x4 = m.getX2();
+        double y1 = l.getY1();
+        double y2 = l.getY2();
+        double y3 = m.getY1();
+        double y4 = m.getY2();
 
         // Zaehler
         double zx = (x1 * y2 - y1 * x2)*(x3-x4) - (x1 - x2) * (x3 * y4 - y3 * x4);
@@ -86,17 +91,31 @@ public class CustomLine2D extends Line2D.Double {
         double x = zx/n;
         double y = zy/n;
 
+        if( (x >= x1 && x <= x2) && (x >= x3 && x <= x4) ){
 
-        // Test ob der Schnittpunkt auf den angebenen Strecken liegt oder außerhalb.
-        if ( ((x3 >= x1 && x3 <= x2) || (x3 >=x2 && x3 <= x1) )
-                || ((x4 >= x1 && x3 <= x2) || (x4 >=x2 && x3 <= x1) ))
-        {
+            if(l.getP1().equals(m.getP1()) || l.getP1().equals(m.getP2()) || l.getP2().equals(m.getP1()) || l.getP2().equals(m.getP2())){
+                return null;
+            }
 
+            // Vielleicht ist bei der Division durch n etwas schief gelaufen
+            if (java.lang.Double.isNaN(x)& java.lang.Double.isNaN(y)) {
+
+
+                throw new IllegalArgumentException("Schnittpunkt nicht eindeutig.");
+            }
+
+            Point2D.Double p = new Point2D.Double(x,y);
+
+            return p;
+
+        } else {
             return null;
-
         }
-        return new Point2D.Double(x,y);
+
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -113,4 +132,13 @@ public class CustomLine2D extends Line2D.Double {
     public int hashCode() {
         return id;
     }
+
+    // Test ob der Schnittpunkt auf den angebenen Strecken liegt oder außerhalb.
+    //if ( ((x3 >= x1 && x3 <= x2) || (x3 >=x2 && x3 <= x1) )
+      //      || ((x4 >= x1 && x3 <= x2) || (x4 >=x2 && x3 <= x1) ))
+    //{
+
+      //  return null;
+
+    //}
 }

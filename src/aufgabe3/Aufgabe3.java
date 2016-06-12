@@ -21,10 +21,11 @@ public class Aufgabe3 {
     private static Logger log = LogManager.getLogger(Aufgabe3.class);
 
     public static void start() throws BadDataException {
-
-        Vector<Line2D.Double> line2DVector = ComGeoUtil.readLines("src/aufgabe3/coords/simple_test.dat");
+        long startTime = System.currentTimeMillis();
+        Vector<Line2D.Double> line2DVector = ComGeoUtil.readLines("src/aufgabe3/coords/s_1000_10.dat");
 
             List<Event> eventQueue = generateSortedEventList(line2DVector);
+
 
             List<CustomLine2D> sweepLineOrder = new ArrayList<>();
 
@@ -32,46 +33,50 @@ public class Aufgabe3 {
 
             while(!eventQueue.isEmpty()){
                 Event event = eventQueue.get(0);
+                log.debug("___________________________________________");
 
-                log.debug(event.getPoint().getX());
 
                 if(event instanceof LineEvent) {
 
+                    log.debug("LineEventX: " + event.getPoint().getX());
+
                     LineEvent lineEvent = (LineEvent) event;
+                    CustomLine2D line = lineEvent.getLine();
+                    log.debug("LineID: " + lineEvent.getLine().getId());
                     if(lineEvent.getEventType().equals(LineEvent.EventType.START)){
-                        handleStartEvent(sweepLineOrder, eventQueue, lineEvent);
+                        handleStartEvent(sweepLineOrder, eventQueue, line);
 
                     }
 
                     if(lineEvent.getEventType().equals(LineEvent.EventType.END)) {
-                        handleEndEvent(sweepLineOrder, eventQueue, lineEvent);
+                        handleEndEvent(sweepLineOrder, eventQueue, line);
                     }
                 } else if(event instanceof IntersectEvent){
-                    sweepLineOrder.indexOf(event);
+                    log.debug("IntersectEventX: " + event.getPoint().getX());
+                    if(!intersectSet.contains(event.getPoint())) {
+                        sweepLineOrder.indexOf(event);
 
-                    IntersectEvent intersectEvent = (IntersectEvent) event;
+                        IntersectEvent intersectEvent = (IntersectEvent) event;
+                        intersectSet.add(intersectEvent.getPoint());
 
-                    int indexOfLine1 = sweepLineOrder.indexOf(intersectEvent.getLine1());
-                    int indexOfLine2 = sweepLineOrder.indexOf(intersectEvent.getLine2());
+                        CustomLine2D line1 = intersectEvent.getLine1();
+                        CustomLine2D line2 = intersectEvent.getLine2();
 
-
-                    Collections.swap(sweepLineOrder, indexOfLine1, indexOfLine2);
+                        handleIntersectEvent(sweepLineOrder, eventQueue, line1, line2);
+                    }
                 }
-
-
-
-
-
                 eventQueue.remove(0);
             }
 
-            log.debug("Anzahl Schnittpunkte: " );
-
+            long endTime = System.currentTimeMillis();
+            log.error("Anzahl Schnittpunkte: " + intersectSet.size());
+            log.error("Zeit: " + (endTime-startTime) + " ms");
 
 
 
 
     }
+
 
 
 
@@ -93,33 +98,36 @@ public class Aufgabe3 {
 
     private static List<Event> generateSortedEventList(Vector<Line2D.Double> line2DVector) throws BadDataException {
 
-        ArrayList<Event> arrayList = new ArrayList<>();
+        ArrayList<Event> eventList = new ArrayList<>();
         int idCounter = 0;
         for(Line2D.Double line : line2DVector){
-
+            idCounter++;
             Point2D p1 = line.getP1();
             Point2D p2 = line.getP2();
 
-            if(p1.equals(p2)) throw new BadDataException("Beide Punkte der Strecke sind identisch!");
-            else if(p1.getX() == p2.getX()) throw new BadDataException("Die Strecke verläuft parallel zur Y-Achse");
+            if(p1.equals(p2) || p1.getX() == p2.getX()) {
+                log.error("Beide Punkte der Strecke sind identisch!");
+            }
+            else if(p1.getX() == p2.getX()) log.error("Die Strecke verläuft parallel zur Y-Achse");
 
-            idCounter = idCounter+2;
+
+
             if(p1.getX() < p2.getX()){
-                arrayList.add(new LineEvent(LineEvent.EventType.START, p1, new CustomLine2D(idCounter-1, line)));
-                arrayList.add(new LineEvent(LineEvent.EventType.END, p2, new CustomLine2D(idCounter, line)));
+                eventList.add(new LineEvent(LineEvent.EventType.START, p1, new CustomLine2D(idCounter, line)));
+                eventList.add(new LineEvent(LineEvent.EventType.END, p2, new CustomLine2D(idCounter, line)));
 
             } else {
                 Line2D.Double swappedLine = new Line2D.Double(p2, p1);
-                arrayList.add(new LineEvent(LineEvent.EventType.START, p2, new CustomLine2D(idCounter-1, swappedLine)));
-                arrayList.add(new LineEvent(LineEvent.EventType.END, p1, new CustomLine2D(idCounter, swappedLine)));
+                eventList.add(new LineEvent(LineEvent.EventType.START, p2, new CustomLine2D(idCounter, swappedLine)));
+                eventList.add(new LineEvent(LineEvent.EventType.END, p1, new CustomLine2D(idCounter, swappedLine)));
             }
         }
-        Collections.sort(arrayList, (o1, o2) -> {
+        Collections.sort(eventList, (o1, o2) -> {
             Double double1 = o1.getPoint().getX();
             Double double2 = o2.getPoint().getX();
             return double1.compareTo(double2);
         });
-        return arrayList;
+        return eventList;
     }
 
     /**
@@ -162,45 +170,97 @@ public class Aufgabe3 {
         return placeToSortIn;
     }
 
-    private static void handleStartEvent(List<CustomLine2D> sweepLineOrder, List<Event> eventQueue, LineEvent lineEvent){
-        CustomLine2D line = lineEvent.getLine();
+    private static void handleStartEvent(List<CustomLine2D> sweepLineOrder, List<Event> eventQueue, CustomLine2D customLine2D){
+        log.debug("handleStartEvent");
+        CustomLine2D line = customLine2D;
         int placeInList = addLineToSweepLine(sweepLineOrder, line);
 
 
         if(placeInList>0){
             CustomLine2D lineAbove = sweepLineOrder.get(placeInList - 1);
-            Point2D intersectWithAbove = lineAbove.intersectLines(lineEvent.getLine());
+            Point2D intersectWithAbove = lineAbove.intersectLines(customLine2D);
+            log.debug("intersect: " + intersectWithAbove);
             if(intersectWithAbove != null){
                 Event intersectEvent = new IntersectEvent(intersectWithAbove, lineAbove, line);
                 addEventToQueue(eventQueue, intersectEvent);
             }
-        }
 
-        if(placeInList < sweepLineOrder.size()-1){
-            CustomLine2D lineBelow = sweepLineOrder.get(placeInList + 1);
-            Point2D intersectWithBelow = lineBelow.intersectLines(lineEvent.getLine());
-            if(intersectWithBelow != null){
-                Event intersectEvent = new IntersectEvent(intersectWithBelow, line, lineBelow);
-                addEventToQueue(eventQueue, intersectEvent);
+            if(placeInList < sweepLineOrder.size()-1){
+                CustomLine2D lineBelow = sweepLineOrder.get(placeInList + 1);
+                Point2D intersectWithBelow = lineBelow.intersectLines(customLine2D);
+                log.debug("intersect: " + intersectWithBelow);
+                if(intersectWithBelow != null){
+                    Event intersectEvent = new IntersectEvent(intersectWithBelow, line, lineBelow);
+                    addEventToQueue(eventQueue, intersectEvent);
+                }
             }
         }
+
+
     }
 
-    private static void handleEndEvent(List<CustomLine2D> sweepLineOrder, List<Event> eventQueue, LineEvent lineEvent) {
-        int placeInSweepLine = sweepLineOrder.indexOf(lineEvent.getLine());
-        sweepLineOrder.remove(placeInSweepLine);
+    private static void handleEndEvent(List<CustomLine2D> sweepLineOrder, List<Event> eventQueue, CustomLine2D customLine2D) {
+        log.debug("handleEndEvent");
+        int placeInSweepLine = sweepLineOrder.indexOf(customLine2D);
 
-        if(placeInSweepLine > 0 && placeInSweepLine < sweepLineOrder.size()-1){
+        sweepLineOrder.remove(placeInSweepLine);
+        log.debug("placeInSweepLine: " + placeInSweepLine);
+        log.debug("sweepLineSize: " + sweepLineOrder.size());
+        if(placeInSweepLine > 0 && placeInSweepLine < sweepLineOrder.size()-2){
             CustomLine2D lineAbove = sweepLineOrder.get(placeInSweepLine-1);
             CustomLine2D lineBelow = sweepLineOrder.get(placeInSweepLine + 1);
 
             Point2D intersect = lineAbove.intersectLines(lineBelow);
+            log.debug("intersect: " + intersect);
             if(intersect != null){
                 Event intersectEvent = new IntersectEvent(intersect, lineAbove, lineBelow);
                 addEventToQueue(eventQueue, intersectEvent);
             }
         }
 
+
+    }
+
+    private static void handleIntersectEvent(List<CustomLine2D> sweepLineOrder, List<Event> eventQueue, CustomLine2D line1, CustomLine2D line2) {
+        log.debug("handleIntersectEvent");
+        int indexOfLine1 = sweepLineOrder.indexOf(line1);
+        int indexOfLine2 = indexOfLine1+1;
+
+        log.debug("indexes for swap: " + indexOfLine1 + " " + indexOfLine2);
+
+        Collections.swap(sweepLineOrder, indexOfLine1, indexOfLine2);
+
+        indexOfLine1 = indexOfLine2;
+        indexOfLine2 = indexOfLine1-1;
+
+        log.debug("indexes after swap: " + indexOfLine1 + " " + indexOfLine2);
+
+        if(indexOfLine2-1 >= 0 ){
+            CustomLine2D lineAboveIntersectLines = sweepLineOrder.get(indexOfLine2-1);
+            log.debug(indexOfLine1-1);
+
+            log.debug("line2: " + line2.getP1() + " " + line2.getP2());
+            log.debug("lineAboveIntersectLines: " + lineAboveIntersectLines.getP1() + " " + lineAboveIntersectLines.getP2());
+
+            Point2D intersectAbove = line2.intersectLines(lineAboveIntersectLines);
+            log.debug("intersectAbove: " + intersectAbove);
+
+            if(intersectAbove != null){
+                Event intersectAboveEvent = new IntersectEvent(intersectAbove, lineAboveIntersectLines, line2);
+                addEventToQueue(eventQueue, intersectAboveEvent);
+
+            }
+
+            if(indexOfLine1+1 < sweepLineOrder.size()-2) {
+                CustomLine2D lineBelowIntersectLines = sweepLineOrder.get(indexOfLine1 + 1);
+                Point2D intersectBelow = line1.intersectLines(lineBelowIntersectLines);
+                log.debug("intersectBelow: " + intersectBelow);
+                if (intersectBelow != null) {
+                    Event intersectBelowEvent = new IntersectEvent(intersectBelow, line1, lineBelowIntersectLines);
+                    addEventToQueue(eventQueue, intersectBelowEvent);
+                }
+            }
+        }
 
     }
 

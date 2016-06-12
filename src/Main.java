@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Logger log = LogManager.getLogger(Main.class);
-        //Aufgabe1.start();
+        Aufgabe1.start();
         //System.out.println(testResult);
         //Aufgabe2.start();
         Aufgabe3.start();

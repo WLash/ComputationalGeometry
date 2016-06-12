@@ -16,7 +16,7 @@ public class Aufgabe1 {
 
     public static void start() throws Exception {
         long startTime = System.currentTimeMillis();
-        Vector<Line2D.Double> data = ComGeoUtil.readLines("src/aufgabe1/coords/data_10cuts.dat");
+        Vector<Line2D.Double> data = ComGeoUtil.readLines("src/aufgabe1/coords/s_1000_10.dat");
         System.out.println("Start . Size: " + data.size());
         int crossCount = 0;
         int comparison = 0;
