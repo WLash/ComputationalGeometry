@@ -1,0 +1,180 @@
+
+Convex hull of 100 points in 2-d:
+
+
+  CPU seconds to compute hull (after input): 0.001
+
+
+Convex hull of 1000 points in 2-d:
+
+
+  CPU seconds to compute hull (after input):  0
+
+
+Convex hull of 10000 points in 2-d:
+
+
+  CPU seconds to compute hull (after input): 0.001
+
+
+Convex hull of 100000 points in 2-d:
+
+
+  CPU seconds to compute hull (after input): 0.011
+
+
+Convex hull of 1000000 points in 2-d:
+
+
+  CPU seconds to compute hull (after input): 0.108
+
+
+Convex hull of 100 points in 3-d:
+
+  CPU seconds to compute hull (after input):  0
+
+
+Convex hull of 1000 points in 3-d:
+
+  CPU seconds to compute hull (after input): 0.001
+
+
+Convex hull of 10000 points in 3-d:
+
+
+  CPU seconds to compute hull (after input): 
+
+
+Convex hull of 100000 points in 3-d:
+
+
+  CPU seconds to compute hull (after input): 0.023
+
+
+Convex hull of 1000000 points in 3-d:
+
+  CPU seconds to compute hull (after input): 0.213
+
+  
+Convex hull of 100 points in 4-d:
+
+  CPU seconds to compute hull (after input): 0.001
+
+
+Convex hull of 1000 points in 4-d:
+
+
+  CPU seconds to compute hull (after input): 0.004
+
+
+Convex hull of 10000 points in 4-d:
+
+
+  CPU seconds to compute hull (after input): 0.015
+
+
+Convex hull of 100000 points in 4-d:
+
+
+  CPU seconds to compute hull (after input): 0.069
+
+
+
+Convex hull of 1000000 points in 4-d:
+
+
+  CPU seconds to compute hull (after input): 1.236
+
+
+Convex hull of 100 points in 5-d:
+
+
+  CPU seconds to compute hull (after input): 0,004
+
+
+Convex hull of 1000 points in 5-d:
+
+
+  CPU seconds to compute hull (after input): 0,032
+
+
+Convex hull of 10000 points in 5-d:
+
+
+  CPU seconds to compute hull (after input): 0,157
+
+
+Convex hull of 100000 points in 5-d:
+
+
+  CPU seconds to compute hull (after input): 0,809
+
+
+Convex hull of 1000000 points in 5-d:
+
+
+  CPU seconds to compute hull (after input): 3,488
+
+
+
+Convex hull of 100 points in 6-d:
+
+
+  CPU seconds to compute hull (after input): 0,021
+
+
+Convex hull of 1000 points in 6-d:
+
+
+  CPU seconds to compute hull (after input): 0,395
+
+
+Convex hull of 10000 points in 6-d:
+
+
+  CPU seconds to compute hull (after input): 3,278
+
+
+Convex hull of 100000 points in 6-d:
+
+
+  CPU seconds to compute hull (after input): 15,75
+
+
+Convex hull of 1000000 points in 6-d:
+
+
+  CPU seconds to compute hull (after input): 70,85
+
+
+Convex hull of 100 points in 7-d:
+
+
+  CPU seconds to compute hull (after input): 0,096
+
+
+Convex hull of 1000 points in 7-d:
+
+
+  CPU seconds to compute hull (after input): 3,926
+
+
+Convex hull of 10000 points in 7-d:
+
+  CPU seconds to compute hull (after input): 51,71
+
+  
+  
+ ********* 100000 too big
+
+
+Convex hull of 100 points in 8-d:
+
+  CPU seconds to compute hull (after input): 0,401 
+  
+ 
+
+Convex hull of 1000 points in 8-d:
+
+
+  CPU seconds to compute hull (after input): 51,46
